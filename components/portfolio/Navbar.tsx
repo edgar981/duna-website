@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 
 type NavItem = {
@@ -40,12 +41,12 @@ const Navbar = () => {
       <div className="max-w-350 mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-10">
           {/* Logo */}
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-3 cursor-pointer">
-            <div className="w-8 h-8 border border-foreground flex items-center justify-center">
-              <div className="w-2 h-2 bg-primary" />
-            </div>
-            <span className="font-heading text-sm font-medium tracking-wider uppercase">
-              Duna<span className="text-primary">Studio</span>
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center cursor-pointer">
+            <span className="block dark:hidden">
+              <Image src="/brand/duna-logo-horizontal.svg" alt="Duna" width={116} height={40} priority />
+            </span>
+            <span className="hidden dark:block">
+              <Image src="/brand/duna-logo-horizontal-negative.svg" alt="Duna" width={116} height={40} priority />
             </span>
           </button>
 

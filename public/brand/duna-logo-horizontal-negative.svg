@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232 80" width="232" height="80" fill="none">
+  <defs></defs>
+  <g transform="translate(14 16) scale(0.4)">
+    <line x1="40" y1="28" x2="40" y2="92" stroke="#FCFCFC" stroke-width="7" stroke-linecap="round"></line>
+    <path d="M40 28 C74 28 92 44 92 60 C92 76 74 92 40 92" stroke="#FCFCFC" stroke-width="7" stroke-linecap="round"></path>
+    <circle cx="40" cy="28" r="6.5" fill="#FCFCFC"></circle>
+    <circle cx="40" cy="92" r="6.5" fill="#FCFCFC"></circle>
+    <circle cx="92" cy="60" r="9" fill="#00A8D6"></circle>
+  </g>
+  <line x1="80" y1="26" x2="80" y2="54" stroke="rgba(252,252,252,0.25)" stroke-width="1"></line>
+  <text x="98" y="51" font-family="&#39;JetBrains Mono&#39;, ui-monospace, monospace" font-size="30" font-weight="700" letter-spacing="9" fill="#FCFCFC">DUNA</text>
+</svg>
