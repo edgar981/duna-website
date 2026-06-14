@@ -10,20 +10,6 @@ import { CapabilitiesProps, CTAProps, HeroProps, MetricsProps, OverviewProps, Pr
 function PageHero({ label, line1, line2, description, ctaLabel }: HeroProps) {
   return (
     <section className="relative min-h-[85vh] flex flex-col justify-end px-6 lg:px-10 pb-20 pt-32 max-w-350 mx-auto">
-      {/* Back link */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        className="absolute top-24 left-6 lg:left-10"
-      >
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
-        >
-          <ArrowLeft className="w-3 h-3" /> Inicio
-        </Link>
-      </motion.div>
 
       {/* Decorative grid lines */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

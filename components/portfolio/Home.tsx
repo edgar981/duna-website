@@ -25,7 +25,6 @@ const PROJECT_IMAGES: string[] = [
 export default function Home() {
   return (
     <GridBackground className="min-h-screen">
-      <Navbar />
       <HeroSection heroImage={HERO_IMAGE} />
 
       <SectionDivider label="Soluciones" id="solutions" />
@@ -39,8 +38,6 @@ export default function Home() {
 
       <SectionDivider label="Contacto" id="contact" />
       <PrecisionInquiry />
-
-      <KineticFooter />
     </GridBackground>
   );
 }

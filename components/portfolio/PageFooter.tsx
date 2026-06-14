@@ -1,8 +1,8 @@
 "use client"
-import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 type FooterLink = {
   label: string;
@@ -66,14 +66,21 @@ const PageFooter = () => {
         <div className="py-16 grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-6 h-6 border border-background/40 flex items-center justify-center">
-                <div className="w-1.5 h-1.5 bg-primary" />
-              </div>
-              <span className="font-heading text-sm font-medium tracking-wider uppercase">
-                Duna<span className="text-primary">Studio</span>
-              </span>
-            </div>
+            <Image
+              src="/brand/duna-logo-horizontal.svg"
+              alt="Duna"
+              width={116}
+              height={40}
+              className="mb-6 hidden dark:block"
+            />
+            <Image
+              src="/brand/duna-logo-horizontal-negative.svg"
+              alt="Duna"
+              width={116}
+              height={40}
+              className="mb-6 block dark:hidden"
+              loading="eager"
+            />
 
             <p className="font-mono text-[11px] text-background/40 leading-relaxed">
               Soluciones desarrolladas para
