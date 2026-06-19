@@ -105,7 +105,7 @@ const Navbar = () => {
                 onClick={() => scrollTo('#contact')}
                 className="block font-mono text-xs tracking-widest uppercase px-5 py-2 border border-primary text-primary w-full text-center"
               >
-                Start Project
+                Hablemos
               </button>
             </div>
           </motion.div>

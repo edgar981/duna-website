@@ -6,6 +6,7 @@ import QueryProvider from "@/components/QueryProvider";
 import ThemeProvider from "@/components/ThemeProvider";
 import Navbar from "@/components/portfolio/Navbar";
 import PageFooter from "@/components/portfolio/PageFooter";
+import ChatWidget from "@/components/portfolio/ChatWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {children}
             </main>
             <PageFooter />
+            <ChatWidget />
             <Toaster />
           </QueryProvider>
         </ThemeProvider>
