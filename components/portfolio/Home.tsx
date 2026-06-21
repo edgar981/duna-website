@@ -8,7 +8,7 @@ import SolutionMatrix from "@/components/portfolio/SolutionMatrix";
 import LogicFlow from "@/components/portfolio/LogicFlow";
 import AboutSection from "@/components/portfolio/AboutSection";
 import PrecisionInquiry from "@/components/portfolio/PrecisionInquiry";
-import KineticFooter from "@/components/portfolio/PageFooter";
+import PageFooter from "@/components/portfolio/PageFooter";
 
 const HERO_IMAGE: string =
   "https://media.base44.com/images/public/69e15e7507bf7c5ca7f49a69/b12c4dbe7_generated_image.png";
@@ -38,6 +38,7 @@ export default function Home() {
 
       <SectionDivider label="Contacto" id="contact" />
       <PrecisionInquiry />
+      <PageFooter />
     </GridBackground>
   );
 }

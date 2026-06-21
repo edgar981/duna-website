@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 
 type NavItem = {
@@ -20,6 +21,8 @@ const NAV_ITEMS: NavItem[] = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -28,8 +31,28 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // If we land on "/" carrying a hash (e.g. coming from another page),
+  // scroll to that section once the home page's content is mounted.
+  useEffect(() => {
+    if (pathname === "/" && window.location.hash) {
+      const id = window.location.hash;
+      const t = setTimeout(() => {
+        document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+      return () => clearTimeout(t);
+    }
+  }, [pathname]);
+
   const scrollTo = (href: string) => {
     setMobileOpen(false);
+
+    if (pathname !== "/") {
+      // Sections like #solutions only exist on the homepage —
+      // navigate there first; the effect above handles the scroll.
+      router.push(`/${href}`);
+      return;
+    }
+
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
@@ -41,7 +64,10 @@ const Navbar = () => {
       <div className="max-w-350 mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-10">
           {/* Logo */}
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center cursor-pointer">
+          <button
+            onClick={() => (pathname === '/' ? window.scrollTo({ top: 0, behavior: 'smooth' }) : router.push('/'))}
+            className="flex items-center cursor-pointer"
+          >
             <span className="block dark:hidden">
               <Image src="/brand/duna-logo-horizontal.svg" alt="Duna" width={116} height={40} priority />
             </span>

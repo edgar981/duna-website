@@ -3,8 +3,9 @@ import { ServicePageLayoutProps } from "@/types/service-page";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Apps e Integraciones | KineticLogic",
-  description: "Construimos aplicaciones internas y conectamos los sistemas que ya usas. Sin herramientas genéricas, sin workarounds — soluciones exactas para cómo opera tu negocio.",
+  title: "Apps e Integraciones | Duna",
+  description:
+    "Construimos aplicaciones internas y conectamos los sistemas que ya usas. Sin herramientas genéricas, sin workarounds — soluciones exactas para cómo opera tu negocio.",
 };
 
 const CONFIG: ServicePageLayoutProps = {
@@ -12,20 +13,49 @@ const CONFIG: ServicePageLayoutProps = {
     label: "Apps e Integraciones",
     line1: "Herramientas Hechas",
     line2: "Para Tu Equipo",
-    description: "Construimos aplicaciones internas y conectamos los sistemas que ya usas. Sin herramientas genéricas, sin workarounds — soluciones exactas para cómo opera tu negocio.",
-    ctaLabel: "Solicitar Diagnóstico",
+    description:
+      "Construimos aplicaciones internas y conectamos los sistemas que ya usas. Sin herramientas genéricas, sin workarounds — soluciones exactas para cómo opera tu negocio.",
+    ctaLabel: "Solicitar valoración",
+    ticker: ["Duna Commerce Ops", "Sierra Nativa Coffee", "8 módulos integrados", "100% trazabilidad de pedidos"],
+    flowLabels: { trigger: "Pedido", process: "Sistema", outputA: "Inventario", outputB: "Pago" },
   },
-  overview: {
-    label: "Qué Hacemos",
-    headline: "Software que se ajusta\na tu operación.",
-    paragraphs: [
-      "Las herramientas genéricas nunca encajan del todo. Construimos apps internas que reflejan exactamente los flujos, roles y lógica de tu negocio — sin compromisos ni funcionalidades que nadie usa.",
-      "También conectamos los sistemas que ya tienes: catálogos, inventario, pagos, formularios y canales de venta. Una infraestructura integrada donde la información fluye sin fricciones, desde el pedido hasta el reporte.",
+
+  problem: {
+    label: "El Problema",
+    hook: "¿Tu negocio aún corre sobre WhatsApp, Excel y herramientas que no se hablan?",
+    intro:
+      "Las herramientas genéricas nunca encajan del todo, y los sistemas sueltos obligan al equipo a copiar y pegar entre archivos. El negocio vende y opera, pero la información vive dispersa y nadie tiene una sola fuente de verdad.",
+    pains: [
+      "Pedidos que llegan por chat y se pierden entre conversaciones.",
+      "Inventario actualizado a mano o manejado “de memoria”.",
+      "Pagos que se confirman manualmente, sin registro conectado.",
+      "Clientes sin historial: no sabes quién recompra ni con qué frecuencia.",
+      "Catálogo, ventas y reportes viviendo en hojas de cálculo separadas.",
+      "Herramientas que no se integran: formularios, pagos, inventario y reportes por aparte.",
     ],
   },
-  capabilities: {
-    label: "Capacidades",
-    title: "Lo Que Construimos",
+
+  caseStudy: {
+    label: "Caso Destacado",
+    tag: "Proyecto piloto",
+    title: "Sierra Nativa Coffee",
+    context: "Venta de café · Canales informales",
+    challenge:
+      "Las ventas llegaban por WhatsApp y redes, el pago se confirmaba manualmente y el inventario se llevaba aparte. El cliente quedaba perdido entre conversaciones y, al cierre de mes, no había claridad sobre ventas, productos más rentables ni recompra.",
+    solution:
+      "Un sistema operativo ligero: catálogo digital → pedido → datos del cliente → pago → base de datos central. Desde el panel se gestiona el estado de cada pedido, el inventario se descuenta solo y el negocio consulta reportes y análisis reales.",
+    metrics: [
+      { value: "100%", label: "Trazabilidad de pedidos" },
+      { value: "8", label: "Módulos integrados" },
+      { value: "0", label: "Hojas sueltas" },
+    ],
+    // Drop the real screenshot at public/casos/sierra-nativa-coffee.png
+    visual: { kind: "image", src: "/casos/sierra-nativa-coffee.png", alt: "Sistema de pedidos de Sierra Nativa Coffee" },
+  },
+
+  build: {
+    label: "Qué Construimos",
+    title: "Apps, paneles e integraciones",
     items: [
       {
         title: "Apps Internas",
@@ -41,7 +71,7 @@ const CONFIG: ServicePageLayoutProps = {
       },
       {
         title: "Sistemas de Notificación",
-        description: "Flujos de comunicación automáticos: nuevo pedido, bajo inventario, pago pendiente o confirmación de entrega.",
+        description: "Flujos automáticos: nuevo pedido, bajo inventario, pago pendiente o confirmación de entrega.",
       },
       {
         title: "Mini CRM y Seguimiento",
@@ -49,61 +79,68 @@ const CONFIG: ServicePageLayoutProps = {
       },
       {
         title: "Integraciones de Pagos",
-        description: "Conexión con pasarelas de pago y confirmación automática de transacciones vía API o webhook.",
+        description: "Conexión con pasarelas y confirmación automática de transacciones vía API o webhook.",
       },
     ],
   },
-  metrics: {
-    label: "Resultados",
-    title: "Experiencia Aplicada",
-    metrics: [
-      {
-        value: "8",
-        label: "Módulos Integrados",
-        context: "Duqna Commerce Ops",
-        description: "Catálogo, pedidos, inventario, clientes, pagos, entregas, analítica y automatizaciones, conectados en un solo flujo.",
-      },
-      {
-        value: "100%",
-        label: "Trazabilidad de Pedidos",
-        context: "Sierra Nativa Coffee",
-        description: "Cada pedido pasa por estados claros — pendiente, confirmado, en preparación, entregado — sin perderse entre chats.",
-      },
-      {
-        value: "0",
-        label: "Hojas Sueltas",
-        context: "Operación Centralizada",
-        description: "Catálogo, inventario y clientes salen de Excel y WhatsApp para vivir en un sistema conectado y consultable.",
-      },
+
+  demo: {
+    label: "Proyecto Demostrativo",
+    title: "Duna Commerce Ops",
+    description:
+      "Una plantilla funcional para digitalizar ventas de negocios pequeños: catálogo, pedidos, inventario, pagos, clientes, entregas y analítica conectados en un solo flujo. Diseñada para adaptarse — café, alimentos de finca, productos artesanales o tiendas locales.",
+    modules: [
+      "Catálogo",
+      "Pedidos",
+      "Inventario",
+      "Clientes",
+      "Pagos",
+      "Entregas",
+      "Analítica",
+      "Automatizaciones",
     ],
+    // Drop the real screenshot at public/casos/commerce-ops-panel.png
+    image: { src: "/casos/commerce-ops-panel.png", alt: "Panel administrativo de Duna Commerce Ops" },
+    href: "/casos-de-negocio/commerce-ops",
   },
+
   process: {
     label: "Metodología",
     title: "Cómo Trabajamos",
     steps: [
       {
         title: "Diagnosticamos",
-        description: "Entendemos los flujos actuales, los sistemas involucrados y las fricciones que frenan al equipo. Definimos alcance y criterios de éxito.",
+        description:
+          "Entendemos los flujos actuales, los sistemas involucrados y las fricciones que frenan al equipo. Definimos alcance y criterios de éxito.",
       },
       {
         title: "Diseñamos",
-        description: "Arquitectura técnica, flujos de usuario y modelo de datos. Cada decisión justificada por mantenibilidad, escala y costo.",
+        description:
+          "Arquitectura técnica, flujos de usuario y modelo de datos. Cada decisión justificada por mantenibilidad, escala y costo.",
       },
       {
         title: "Construimos",
-        description: "Desarrollo incremental con entregas funcionales tempranas. Sin big-bang launches — el equipo adopta y ajusta en paralelo.",
+        description:
+          "Desarrollo incremental con entregas funcionales tempranas. Sin lanzamientos big-bang — el equipo adopta y ajusta en paralelo.",
       },
       {
-        title: "Optimizamos",
-        description: "Soporte post-lanzamiento, instrumentación de uso y mejoras continuas. Las herramientas evolucionan con la operación.",
+        title: "Implementamos",
+        description:
+          "Acompañamos la puesta en marcha y conectamos el sistema con la operación real, para que la adopción no se quede en un piloto.",
+      },
+      {
+        title: "Medimos",
+        description:
+          "Instrumentación de uso, indicadores y mejoras continuas. Las herramientas evolucionan con la operación.",
       },
     ],
   },
+
   cta: {
     label: "Conversemos",
     line1: "Construyamos Las",
     line2: "Herramientas Correctas",
-    ctaLabel: "Solicitar Diagnóstico",
+    ctaLabel: "Solicitar valoración",
   },
 };
 
