@@ -164,7 +164,10 @@ const SolutionMatrix = ({ projectImages }: SolutionMatrixProps) => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-0 bg-linear-to-t from-foreground/90 via-foreground/40 to-transparent" />
+                  {/* Scrim is always dark enough for legibility — but its strength
+                      shifts slightly per theme, so toggling still has a visible
+                      effect without ever risking contrast like the old `foreground` token did. */}
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent dark:from-black/90 dark:via-black/55" />
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
@@ -172,7 +175,7 @@ const SolutionMatrix = ({ projectImages }: SolutionMatrixProps) => {
                     {project.category}
                   </span>
 
-                  <h3 className="font-heading text-lg md:text-xl font-medium text-background mt-2">
+                  <h3 className="font-heading text-lg md:text-xl font-medium text-zinc-100 mt-2">
                     {project.title}
                   </h3>
 
@@ -181,13 +184,13 @@ const SolutionMatrix = ({ projectImages }: SolutionMatrixProps) => {
                       {project.metric}
                     </span>
 
-                    <span className="font-mono text-[10px] tracking-wider text-background/60 uppercase">
+                    <span className="font-mono text-[10px] tracking-wider text-zinc-100/60 uppercase">
                       {project.metricLabel}
                     </span>
                   </div>
                 </div>
 
-                <ArrowUpRight className="absolute top-6 right-6 w-5 h-5 text-background opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <ArrowUpRight className="absolute top-6 right-6 w-5 h-5 text-zinc-100 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
             </motion.div>
           );
