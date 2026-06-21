@@ -101,7 +101,7 @@ const CONFIG: ServicePageLayoutProps = {
     ],
     // Drop the real screenshot at public/casos/commerce-ops-panel.png
     image: { src: "/casos/commerce-ops-panel.png", alt: "Panel administrativo de Duna Commerce Ops" },
-    href: "/casos-de-negocio/commerce-ops",
+    
   },
 
   process: {
